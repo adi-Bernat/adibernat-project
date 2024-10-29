@@ -185,3 +185,8 @@
     width: 30px;
     height: 30px;
 }
+
+.footer-container p {
+    font-family: "Varela Round", sans-serif;
+    margin-top: 3px;
+}
