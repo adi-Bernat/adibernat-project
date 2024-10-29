@@ -44,7 +44,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: url(/img/horsefarm.avif);
+    background-image: url(../../img/horsefarm.avif);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
