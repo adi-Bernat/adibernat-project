@@ -46,6 +46,14 @@
         width: 295px !important;
         height: 178px !important;
     }
+
+    .footer-container p {
+        font-size: 15px !important;
+    }
+
+    .footer-container {
+        padding-top: 40px !important;
+    }
 }
 
 
