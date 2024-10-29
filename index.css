@@ -304,3 +304,19 @@
     background-color: #cc7be5;
     color: #333;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.footer-container a {
+    margin: 0 15px;
+}
+
+.footer-container img {
+    width: 30px;
+    height: 30px;
+}
