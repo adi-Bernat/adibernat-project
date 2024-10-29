@@ -159,14 +159,14 @@
     max-width: 600px;
 }
 
-#pro8 {
-    height: 800px;
+#pro5 {
+    height: 400px;
     width: 800px;
     background-repeat: no-repeat;
     background-size: contain;
     margin-bottom: 40px;
     margin-top: 40px;
-
+    padding-bottom: 40px;
 }
 
 .footer-container {
