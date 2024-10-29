@@ -1,97 +1,117 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/*עיצוב לטלפון*/
+/*mobile */
 @media(max-width:780px) {
     .continer {
-        height: auto !important;
-    }
-
-    .form {
+        height: 100% !important;
+        padding: 10px !important;
         width: 100% !important;
     }
 
-    .img {
-        width: 100% !important;
-        height: 250px !important;
+    .contact {
+        height: 100% !important;
+        padding: 10px !important;
+        width: 80% !important;
 
+    }
+
+    .contact h2 {
+        font-size: 25px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .contact p {
+        font-size: 16px !important;
+
+    }
+
+    .box {
+        padding: 6px !important;
+        margin: 3px !important;
+        width: 60% !important;
     }
 }
 
 /* main continer */
 .continer {
     display: flex;
-    height: 100vh;
+    justify-content: center;
+    position: relative;
+    align-items: center;
     width: 100%;
-    border: 1px solid #000;
-    margin: auto;
+    height: 100vh;
+    background-image: url(/img/horsefarm.avif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* contact desing */
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    height: 350px;
+    background-color: rgba(9, 6, 6, 0.311);
+    padding: 20px 70px;
+}
+
+.contact h2 {
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: aliceblue;
+}
+
+.contact p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: aliceblue;
+}
+
+/* form desing */
+.box {
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 7px;
+}
+
+#btn {
+    background-color: rgb(40, 70, 39);
+    color: rgb(232, 242, 242);
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+/*social icons */
+.social {
     flex-wrap: wrap;
 }
 
-/*עיצוב מסמך */
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    background-color: whitesmoke;
+.social img {
+    width: 35px;
+    height: 30px;
+    transition: .8s;
+    border-radius: 5px;
+
+
 }
 
-/*עיצוב כותרת במסמך*/
-.form h2 {
-    font-size: 20px;
-    color: cadetblue;
-    margin: 30px;
-}
-
-/*input*/
-.box {
-    padding: 12px;
-    width: 60%;
-    margin: 12px;
-    border-radius: 10px;
-    border: 1px solid #000;
-}
-
-
-/*submit buttom*/
-#send {
-    background-color: darkkhaki;
-    padding: 12px 30px;
-    border-radius: 10px;
-    border: 1px solid #000;
-    color: white;
-}
-
-#send:hover {
+.social img :hover {
     transform: scale(1.2);
-    background-color: lightpink;
-    color: black;
+
 }
 
-/*forget paswword*/
-.form a {
-    text-decoration: none;
-    color: burlywood;
+.social h3 {
     font-size: 20px;
-    margin: 15px;
-}
-
-.form a:hover {
-    color: cornflowerblue;
-    opacity: 0.8;
-}
-
-/*image*/
-.img {
-    display: flex;
-    width: 50%;
-    background-image: url("/img/pink.avif");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    color: aliceblue;
 }
