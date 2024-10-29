@@ -168,3 +168,20 @@
     margin-top: 40px;
 
 }
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #a264a5;
+    direction: rtl;
+}
+
+.footer-container a {
+    margin: 0 15px;
+}
+
+.footer-container img {
+    width: 30px;
+    height: 30px;
+}
