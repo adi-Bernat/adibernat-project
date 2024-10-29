@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #E5EEFF;
+    direction: rtl;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    max-width: 1224px;
+    margin: 20px;
+    gap: 20px;
+}
+
+#cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-area: 1/1/3/3;
+    background-color: #020253;
+    text-align: center;
+    gap: 19px;
+
+}
+
+#cont h2 {
+    color: #0EE1DA;
+    width: 80%;
+    font: normal normal bold 61px/80px Assistant;
+    text-align: center;
+}
+
+#cont p {
+    color: #F9F9F9;
+    width: 80%;
+    font: normal normal normal 20px/26px Assistant;
+    text-align: center;
+}
+
+#form {
+    grid-area: 4/3/7/5;
+    background-color: #8E097C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56.73px;
+    color: #FFFFFF;
+    text-align: center;
+
+}
+
+#form h3 {
+    text-align: center;
+    font: normal normal bold 35px/46px Assistant;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+
+}
+
+#form p {
+    text-align: center;
+    font: normal normal normal 20px/26px Assistant;
+    letter-spacing: 0px;
+    color: #F9F9F9;
+    margin: 60px 0px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control>label {
+    text-align: right;
+    font: normal normal bold 16px/24px Heebo;
+    color: #0EE1DA;
+}
+
+.form-control>input {
+    width: 500px;
+    height: 50px;
+    background: #E5EEFF 0% 0% no-repeat padding-box;
+    border: 0;
+    border-bottom: 4px solid #0EE1DA;
+    margin-bottom: 40px;
+}
+
+.form-control>button {
+    width: 166px;
+    height: 50px;
+    background: #0EE1DA 0% 0% no-repeat padding-box;
+    text-align: center;
+    font: normal normal bold 24px/33px Heebo;
+    letter-spacing: 0.36px;
+    color: #011560;
+    padding: 5px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-control>textarea {
+    background: #E5EEFF 0% 0% no-repeat padding-box;
+    border: 0;
+    border-bottom: 4px solid #0EE1DA;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        margin: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+
+    #cont {
+        margin: -40px -40px 0px -20px;
+        grid-area: 1/1/3/3;
+    }
+
+    #cont h2 {
+        text-align: center;
+        font: normal normal bold 36px/47px Assistant;
+    }
+
+    #cont p {
+        text-align: center;
+        font: normal normal normal 20px/26px Assistant;
+    }
+
+    #form {
+        grid-area: 7/1/10/3;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    #form h3 {
+        text-align: center;
+        font: normal normal bold 25px/33px Assistant;
+        width: 90%;
+    }
+
+    #form p {
+        text-align: center;
+        width: 90%;
+        font: normal normal normal 15px/19px Assistant;
+    }
+}

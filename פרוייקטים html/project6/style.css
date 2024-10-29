@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* main continer */
+.container {
+
+    margin-top: 30px !important;
+    display: flex;
+    height: 500px;
+    width: 80%;
+    border: 1px solid #000;
+    margin: auto;
+
+}
+
+/*עיצוב מסמך */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: whitesmoke;
+}
+
+/*עיצוב כותרת במסמך*/
+.form h2 {
+    font-size: 20px;
+    color: cadetblue;
+    margin: 30px;
+}
+
+/*עיצוב פסקה*/
+.form p {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+/*img*/
+.img {
+    display: flex;
+    width: 50%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("../img/pinkk.avif");
+}
+
+/*mobile */
+@media(max-width:780px) {
+    .container {
+        display: flex !important;
+        flex-direction: column;
+        height: auto !important;
+
+    }
+
+    .form {
+
+        width: 100% !important;
+
+
+    }
+
+    .img {
+        width: 100% !important;
+        height: 250px !important;
+
+    }
+
+    .form h2 {
+        font-size: 25px !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+    }
+
+    .form p {
+        font-size: 16px !important;
+
+    }
+
+    .box {
+        padding: 6px !important;
+        margin: 3px !important;
+        width: 60% !important;
+    }
+}
+
+/*input*/
+.box {
+    padding: 12px;
+    width: 60%;
+    margin: 12px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+
+/*submit buttom*/
+#send {
+    background-color: darkkhaki;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    color: white;
+}
+
+#send:hover {
+    transform: scale(1.2);
+    background-color: lightpink;
+    color: black;
+}
+
+
+.social {
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 20px;
+
+}
+
+.social img {
+    width: 35px;
+    height: 30px;
+    transition: .8s;
+    border-radius: 5px;
+    margin: 10px;
+
+}
+
+.social img :hover {
+    transform: scale(1.2);
+
+}
+
+.social h3 {
+    font-size: 15px;
+    color: rgb(93, 135, 171);
+}

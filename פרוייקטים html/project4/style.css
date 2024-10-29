@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*עיצוב לטלפון*/
+@media(max-width:780px) {
+    .continer {
+        height: auto !important;
+    }
+
+    .form {
+        width: 100% !important;
+    }
+
+    .img {
+        width: 100% !important;
+        height: 250px !important;
+
+    }
+}
+
+/* main continer */
+.continer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    border: 1px solid #000;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+/*עיצוב מסמך */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: whitesmoke;
+}
+
+/*עיצוב כותרת במסמך*/
+.form h2 {
+    font-size: 20px;
+    color: cadetblue;
+    margin: 30px;
+}
+
+/*input*/
+.box {
+    padding: 12px;
+    width: 60%;
+    margin: 12px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+
+/*submit buttom*/
+#send {
+    background-color: darkkhaki;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    color: white;
+}
+
+#send:hover {
+    transform: scale(1.2);
+    background-color: lightpink;
+    color: black;
+}
+
+/*forget paswword*/
+.form a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.form a:hover {
+    color: cornflowerblue;
+    opacity: 0.8;
+}
+
+/*image*/
+.img {
+    display: flex;
+    width: 50%;
+    background-image: url("/img/pink.avif");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
