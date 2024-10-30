@@ -318,21 +318,23 @@
 .footer-container {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 5px;
     background-color: #a264a5;
     direction: rtl;
 }
 
 .footer-container a {
-    margin: 0 15px;
+    margin: 0 30px;
 }
 
 .footer-container img {
     width: 30px;
     height: 30px;
+    margin-top: 6px;
 }
 
 .footer-container p {
     font-family: "Varela Round", sans-serif;
-    margin-top: 3px;
+    margin-top: 6px;
+
 }
