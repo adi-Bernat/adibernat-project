@@ -271,9 +271,12 @@
     color: #333;
 }
 
+.form {
+    background-color: #b4abb4;
+}
+
 .contact-form {
-    max-width: 800px;
-    height: auto;
+    max-width: 300px;
     margin: auto;
     padding: 20px;
     background-color: #e2cae2;
