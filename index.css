@@ -64,7 +64,10 @@
     }
 
     .footer-container p {
-        font-size: 15px !important;
+        font-size: 10px !important;
+        padding-top: 3px !important;
+        align-items: center;
+
     }
 
     .footer-container {
@@ -318,6 +321,7 @@
 .footer-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 5px;
     background-color: #a264a5;
     direction: rtl;
