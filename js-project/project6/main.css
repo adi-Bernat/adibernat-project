@@ -1,0 +1,169 @@
+/* סגנונות בסיסיים */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdf2f8;
+    padding: 10px;
+}
+
+/* מיכל המשחק */
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* כותרת */
+h1 {
+    text-align: center;
+    color: #374151;
+    margin: 0 0 15px 0;
+    font-size: 1.8rem;
+}
+
+/* תיבת הודעות */
+.message-box {
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #374151;
+    min-height: 30px;
+}
+
+.message-box.show {
+    opacity: 1;
+}
+
+.message-box.win {
+    color: #059669;
+}
+
+.message-box.tie {
+    color: #7c3aed;
+}
+
+/* אזור הכפתורים */
+.controls {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* כפתור החלפת מצב */
+.toggle-mode {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #fce7f3;
+    border: none;
+    border-radius: 8px;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.toggle-mode:hover {
+    background-color: #fbcfe8;
+}
+
+/* לוח המשחק */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* משבצות המשחק */
+.btn {
+    aspect-ratio: 1;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #fce7f3;
+    border: none;
+    border-radius: 8px;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #fbcfe8;
+}
+
+/* תצוגת סטטוס */
+.status {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+/* כפתור איפוס */
+.reset-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #9ca3af;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+    background-color: #6b7280;
+}
+
+/* התאמות למסכים קטנים */
+@media (max-width: 380px) {
+    .game-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1.8rem;
+    }
+
+    .message-box,
+    .status {
+        font-size: 1rem;
+    }
+
+    .toggle-mode,
+    .reset-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* התאמות למסכים גדולים יותר */
+@media (min-width: 768px) {
+    .game-container {
+        padding: 25px;
+    }
+
+    .btn {
+        font-size: 2.5rem;
+    }
+
+    .message-box,
+    .status {
+        font-size: 1.2rem;
+    }
+}

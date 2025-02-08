@@ -1,0 +1,68 @@
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+button#check,
+button#skip {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    color: white;
+    background-color: #8f60b8;
+}
+
+#skip {
+    background-color: #8f60b8;
+}
+
+button#check:hover,
+button#skip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button#check:hover {
+    background-color: #81bbf8;
+}
+
+button#skip:hover {
+    background-color: #636466;
+}
+
+/* כפתורים מושבתים */
+button#check:disabled,
+button#skip:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    button#check,
+    button#skip {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+
+button#check:active,
+button#skip:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}

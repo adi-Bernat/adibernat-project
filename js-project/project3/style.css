@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #767779;
+    direction: rtl;
+    color: #71557a;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(173, 158, 172);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #5c2d61;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+/* עיצוב הטופס */
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.add-task-input:focus {
+    outline: none;
+    border-color: #794f79;
+}
+
+/* כפתורי הוספה */
+.add-task-button {
+    padding: 10px 20px;
+    background-color: #71557a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-task-button:hover {
+    background-color: #bd2f95;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(110, 73, 104, 0.3);
+    color: black;
+}
+
+.task-list {
+    list-style: none;
+}
+
+/* עיצוב המשימות */
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* מיכל הכפתורים */
+.task-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* כפתורי פעולה */
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button {
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-button {
+    background-color: #5c2d61;
+}
+
+.delete-button {
+    background-color: #de2c3e;
+}
+
+.save-button {
+    background-color: #71557a;
+}
+
+.cancel-button {
+    background-color: #767779;
+}
+
+/* מצב עריכה */
+.task-item.editing {
+    background-color: #e8d7e7;
+    border: 2px solid #71557a;
+    padding: 15px;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #71557a;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 0;
+}
+
+/* התאמות למסך קטן */
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 10px auto;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .add-task-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .add-task-input,
+    .add-task-button {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .task-text-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .task-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .edit-button,
+    .delete-button,
+    .save-button,
+    .cancel-button {
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .task-item.editing {
+        gap: 15px;
+    }
+
+    .edit-input {
+        width: 100%;
+        padding: 12px;
+        margin: 0;
+    }
+}
+
+/* אנימציות והוברים */
+@media (hover: hover) {
+    .task-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-button:hover {
+        background-color: #f3a7f9;
+        color: #5c2d61;
+    }
+
+    .delete-button:hover {
+        background-color: #c82333;
+    }
+
+    .save-button:hover {
+        background-color: #bd2f95;
+    }
+
+    .cancel-button:hover {
+        background-color: #5a5b5d;
+    }
+
+    .task-buttons button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* התאמות נגישות */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+.empty-message {
+    text-align: center;
+    color: #5c2d61;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 16px;
+}
