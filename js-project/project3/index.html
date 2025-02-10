@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title> TO DO LIST </title>
+    <title>רשימת משימות</title>
 </head>
 
 <body>
@@ -14,13 +14,31 @@
         <h1>רשימת משימות</h1>
 
         <form class="add-task-form" id="addTaskForm">
-            <input type="text" class="add-task-input" id="newTaskInput" placeholder="הוסף משימה חדשה...">
+            <div class="form-group">
+                <input type="text" class="add-task-input" id="newTaskInput" placeholder="הוסף משימה חדשה..." required>
+                <div class="datetime-inputs">
+                    <input type="date" id="taskDate" class="task-date" required>
+                    <input type="time" id="taskTime" class="task-time" required>
+                </div>
+            </div>
             <button type="submit" class="add-task-button">הוסף</button>
         </form>
 
-        <ul class="task-list" id="taskList"></ul>
+        <div class="tasks-filter">
+            <button class="filter-button active" data-filter="all">הכל</button>
+            <button class="filter-button" data-filter="today">היום</button>
+            <button class="filter-button" data-filter="week">השבוע</button>
+            <button class="filter-button" data-filter="upcoming">עתידי</button>
+        </div>
 
+        <ul class="task-list" id="taskList"></ul>
         <p class="empty-message" id="emptyMessage">אין משימות ברשימה. הוסף משימה חדשה!</p>
+
+        <div class="completed-tasks-section">
+            <h2>משימות שהושלמו</h2>
+            <ul class="completed-task-list" id="completedTaskList"></ul>
+            <p class="empty-completed-message" id="emptyCompletedMessage">אין משימות שהושלמו</p>
+        </div>
     </div>
 </body>
 

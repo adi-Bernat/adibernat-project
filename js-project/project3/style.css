@@ -1,107 +1,200 @@
+/* איפוס בסיסי */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+}
+
+:root {
+    --primary-purple: #6b4cd3;
+    --primary-purple-dark: #5637b0;
+    --light-purple: #f4f1fe;
+    --gray-dark: #4a4a4a;
+    --gray-medium: #757575;
+    --gray-light: #e0e0e0;
+    --white: #ffffff;
+    --delete-red: #dc3545;
+    --success-green: #28a745;
 }
 
 body {
-    background-color: #767779;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-purple);
     direction: rtl;
-    color: #71557a;
-    min-height: 100vh;
-    padding: 15px;
+    color: var(--gray-dark);
 }
 
 .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgb(173, 158, 172);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(107, 76, 211, 0.1);
 }
 
 h1 {
-    color: #5c2d61;
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: var(--primary-purple);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
-/* עיצוב הטופס */
+/* טופס הוספת משימה */
 .add-task-form {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(107, 76, 211, 0.05);
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .add-task-input {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.add-task-input:focus {
-    outline: none;
-    border-color: #794f79;
-}
-
-/* כפתורי הוספה */
-.add-task-button {
-    padding: 10px 20px;
-    background-color: #71557a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    white-space: nowrap;
+}
+
+.datetime-inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.task-date,
+.task-time {
+    padding: 0.5rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.add-task-input:focus,
+.task-date:focus,
+.task-time:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(107, 76, 211, 0.1);
+}
+
+.add-task-button {
+    padding: 0.875rem 1.75rem;
+    background-color: var(--primary-purple);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .add-task-button:hover {
-    background-color: #bd2f95;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(110, 73, 104, 0.3);
-    color: black;
+    background-color: var(--primary-purple-dark);
+    transform: translateY(-1px);
 }
 
-.task-list {
-    list-style: none;
-}
-
-/* עיצוב המשימות */
-.task-item {
+/* סינון משימות */
+.tasks-filter {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    background-color: #f8f9fa;
-    margin-bottom: 8px;
-    border-radius: 4px;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--white);
+    border: 2px solid var(--primary-purple);
+    color: var(--primary-purple);
+    border-radius: 8px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.task-text {
-    flex: 1;
-    word-break: break-word;
+.filter-button.active {
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+/* רשימת משימות */
+.task-list,
+.completed-task-list {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 8px rgba(107, 76, 211, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--gray-light);
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 76, 211, 0.1);
 }
 
 .task-checkbox {
+    margin-left: 1rem;
     width: 20px;
     height: 20px;
-    cursor: pointer;
+    accent-color: var(--primary-purple);
 }
 
-/* מיכל הכפתורים */
+.task-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.task-text {
+    color: var(--gray-dark);
+    font-size: 1.0625rem;
+}
+
+.task-date-time {
+    font-size: 0.9rem;
+    color: var(--gray-medium);
+}
+
+.task-completed {
+    text-decoration: line-through;
+    color: var(--gray-medium);
+}
+
+.task-overdue {
+    border-right: 4px solid var(--delete-red);
+}
+
+.task-urgent {
+    border-right: 4px solid orange;
+}
+
 .task-buttons {
     display: flex;
-    gap: 8px;
-    align-items: center;
+    gap: 0.75rem;
 }
 
 /* כפתורי פעולה */
@@ -109,154 +202,181 @@ h1 {
 .delete-button,
 .save-button,
 .cancel-button {
-    padding: 8px 16px;
-    color: white;
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    min-width: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .edit-button {
-    background-color: #5c2d61;
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.edit-button:hover {
+    background-color: var(--primary-purple-dark);
 }
 
 .delete-button {
-    background-color: #de2c3e;
+    background-color: transparent;
+    color: var(--delete-red);
+    border: 1px solid var(--delete-red);
+}
+
+.delete-button:hover {
+    background-color: var(--delete-red);
+    color: var(--white);
 }
 
 .save-button {
-    background-color: #71557a;
+    background-color: var(--success-green);
+    color: var(--white);
 }
 
 .cancel-button {
-    background-color: #767779;
+    background-color: var(--gray-medium);
+    color: var(--white);
 }
 
 /* מצב עריכה */
-.task-item.editing {
-    background-color: #e8d7e7;
-    border: 2px solid #71557a;
-    padding: 15px;
+.editing {
+    background-color: var(--light-purple);
+    border: 2px solid var(--primary-purple);
+}
+
+.editing .task-text {
+    display: none;
 }
 
 .edit-input {
     flex: 1;
-    padding: 8px 12px;
-    border: 2px solid #71557a;
-    border-radius: 4px;
-    font-size: 16px;
-    min-width: 0;
+    padding: 0.625rem;
+    margin: 0 1rem;
+    border: 2px solid var(--primary-purple);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--white);
 }
 
-/* התאמות למסך קטן */
-@media screen and (max-width: 480px) {
+/* הודעות ריקות */
+.empty-message,
+.empty-completed-message {
+    text-align: center;
+    color: var(--gray-medium);
+    font-style: italic;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--light-purple);
+    border-radius: 10px;
+    display: none;
+}
+
+/* אזור משימות שהושלמו */
+.completed-tasks-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-purple);
+}
+
+.completed-tasks-section h2 {
+    color: var(--primary-purple);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.completed-task-list .task-item {
+    background-color: var(--light-purple);
+    opacity: 0.8;
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
     .container {
-        margin: 10px auto;
-        padding: 15px;
-        width: 100%;
+        margin: 1rem;
+        padding: 1rem;
     }
 
     .add-task-form {
         flex-direction: column;
-        gap: 15px;
     }
 
-    .add-task-input,
+    .datetime-inputs {
+        flex-direction: column;
+    }
+
     .add-task-button {
         width: 100%;
-        font-size: 16px;
-        padding: 12px;
     }
 
     .task-item {
         flex-direction: column;
-        align-items: stretch;
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .task-text-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 1rem;
     }
 
     .task-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
         width: 100%;
+        justify-content: center;
+        gap: 1rem;
     }
 
-    .edit-button,
-    .delete-button,
-    .save-button,
-    .cancel-button {
-        padding: 12px;
-        font-size: 16px;
-        width: 100%;
+    .tasks-filter {
+        flex-wrap: wrap;
     }
 
-    .task-item.editing {
-        gap: 15px;
-    }
-
-    .edit-input {
-        width: 100%;
-        padding: 12px;
-        margin: 0;
+    h1 {
+        font-size: 2rem;
     }
 }
 
-/* אנימציות והוברים */
-@media (hover: hover) {
-    .task-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* אנימציות */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
 
-    .edit-button:hover {
-        background-color: #f3a7f9;
-        color: #5c2d61;
-    }
-
-    .delete-button:hover {
-        background-color: #c82333;
-    }
-
-    .save-button:hover {
-        background-color: #bd2f95;
-    }
-
-    .cancel-button:hover {
-        background-color: #5a5b5d;
-    }
-
-    .task-buttons button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* התאמות נגישות */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        animation: none !important;
-    }
+.task-item {
+    animation: fadeIn 0.3s ease-out;
 }
 
-.empty-message {
-    text-align: center;
-    color: #5c2d61;
-    margin-top: 20px;
-    padding: 15px;
-    font-size: 16px;
+/* עיצוב למצב חשוך */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-purple: #8c6fe6;
+        --primary-purple-dark: #7153cf;
+        --light-purple: #2a2438;
+        --gray-dark: #e0e0e0;
+        --gray-medium: #b0b0b0;
+        --gray-light: #3a3a3a;
+        --white: #1a1a1a;
+    }
+
+    body {
+        background-color: #1a1a1a;
+    }
+
+    .container {
+        background-color: #242424;
+    }
+
+    .task-item {
+        border-color: #3a3a3a;
+    }
+
+    .add-task-input {
+        background-color: #2a2a2a;
+        color: var(--gray-dark);
+    }
 }

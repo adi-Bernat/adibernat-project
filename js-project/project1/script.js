@@ -1,4 +1,3 @@
-console.log(window.location.href);
 
 const images = [
     '../project1/img-java/p1.jpg',
@@ -8,13 +7,16 @@ const images = [
     '../project1/img-java/p5.jpg',
     '../project1/img-java/p6.jpg',
     '../project1/img-java/p7.jpg',
-    '../project1/img-java/p8.jpg',
+    '../project1/img-java/p8.jpg'
 ];
+
+
 let cards = [];
 let flippedCards = [];
 let matchedPairs = 0;
 let attempts = 0;
 let isLocked = false;
+
 
 function createCard(imagePath) {
     const card = document.createElement('div');
@@ -22,7 +24,7 @@ function createCard(imagePath) {
 
     const img = document.createElement('img');
     img.src = imagePath;
-    img.style.display = 'none';
+    img.alt = 'Card';
 
     card.dataset.image = imagePath;
     card.appendChild(img);
@@ -31,6 +33,7 @@ function createCard(imagePath) {
     return card;
 }
 
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -38,6 +41,7 @@ function shuffleArray(array) {
     }
     return array;
 }
+
 
 function flipCard() {
     if (isLocked ||
@@ -57,6 +61,7 @@ function flipCard() {
     }
 }
 
+
 function checkMatch() {
     const [card1, card2] = flippedCards;
     const match = card1.dataset.image === card2.dataset.image;
@@ -69,7 +74,12 @@ function checkMatch() {
 
         if (matchedPairs === images.length) {
             setTimeout(() => {
-                alert('כל הכבוד! ניצחת!');
+                const gameContainer = document.querySelector('.game-container');
+                gameContainer.classList.add('winner');
+                setTimeout(() => {
+                    alert('כל הכבוד! ניצחת! 🎉');
+                    gameContainer.classList.remove('winner');
+                }, 1500);
             }, 500);
         }
     } else {
@@ -84,6 +94,7 @@ function checkMatch() {
         isLocked = false;
     }, 1000);
 }
+
 
 function startNewGame() {
     const gameBoard = document.getElementById('gameBoard');
@@ -101,5 +112,6 @@ function startNewGame() {
         gameBoard.appendChild(card);
     });
 }
+
 
 startNewGame();

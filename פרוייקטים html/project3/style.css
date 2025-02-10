@@ -4,12 +4,107 @@
     box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
 
+.container {
+    position: relative;
+}
+
+
+.image img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+.container-form {
+    color: white;
+    position: absolute;
+    top: 80px;
+    right: 15%;
+    height: fit-content;
+    width: 500px;
+    padding: 60px 35px;
+    background: #1A1A1AD4 0% 0% no-repeat padding-box;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    text-align: right;
+}
+
+
+.header h1 {
+    text-align: right;
+    font: normal normal 900 36px/53px Heebo;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.header p {
+    text-align: right;
+    font: normal normal normal 20px/29px Heebo;
+    letter-spacing: 0px;
+    color: #F9F9F9;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+
+.form-control>label {
+    text-align: right;
+    font: normal normal bold 16px/24px Heebo;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control>input {
+    width: 100%;
+    height: 34px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #D31C75;
+    opacity: 1;
+    padding: 5px;
+    margin-bottom: 20px;
+    font: normal normal normal 16px/24px Heebo;
+}
+
+
+.form>button {
+    width: 100px;
+    height: 36px;
+    background: #D31C75 0% 0% no-repeat padding-box;
+    margin-top: 20px;
+    font: normal normal bold 22px/30px Heebo;
+    letter-spacing: 0.33px;
+    color: #FFFFFF;
+    opacity: 1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form>button:hover {
+    background-color: #b81863;
+}
+
+
+@media (max-width: 480px) {
     .container-form {
+        position: relative;
+        top: -50px;
+        right: 0;
+        width: 90% !important;
+        margin: 0 auto;
+        padding: 15px 20px !important;
         height: fit-content !important;
-        width: 80vh !important;
-        padding: 15px 30px !important;
+    }
+
+    .image img {
+        height: 40vh;
     }
 
     .header h1 {
@@ -31,76 +126,29 @@
     }
 }
 
-.container {
-    position: relative;
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-form {
+        width: 80% !important;
+        right: 10%;
+        padding: 30px 25px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .header p {
+        font-size: 18px;
+        line-height: 26px;
+    }
 }
 
-.image img {
-    width: 100vw;
-    height: 50vh;
-    object-fit: cover;
-    object-position: center top;
-}
 
-.container-form {
-    color: white;
-    position: absolute;
-    top: 80px;
-    right: 15%;
-    height: fit-content;
-    width: 80vh;
-    padding: 60px 35px;
-    background: #1A1A1AD4 0% 0% no-repeat padding-box;
-}
-
-.header h1 {
-    text-align: right;
-    font: normal normal 900 36px/53px Heebo;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-}
-
-.header p {
-    text-align: right;
-    font: normal normal normal 20px/29px Heebo;
-    letter-spacing: 0px;
-    color: #F9F9F9;
-    opacity: 1;
-    margin-bottom: 20px;
-}
-
-.container-form {
-    justify-content: center;
-    text-align: right;
-
-}
-
-.form-control>label {
-    text-align: right;
-    font: normal normal bold 16px/24px Heebo;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-.form-control>input {
-    width: 100%;
-    height: 34px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #D31C75;
-    opacity: 1;
-    padding: 5px;
-    margin-bottom: 20px;
-}
-
-.form>button {
-    width: 100px;
-    height: 36px;
-    background: #D31C75 0% 0% no-repeat padding-box;
-    margin-top: 20px;
-    font: normal normal bold 22px/30px Heebo;
-    letter-spacing: 0.33px;
-    color: #FFFFFF;
-    opacity: 1;
+@media (min-width: 1200px) {
+    .container-form {
+        width: 550px;
+        right: 20%;
+    }
 }

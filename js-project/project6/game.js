@@ -122,7 +122,8 @@ function btnClick() {
     if (vsComputer && !turn) return;
 
     btnClicked++;
-    this.textContent = "X";  // השחקן תמיד X
+    // שינוי כאן - הצגת X או O בהתאם לתור
+    this.textContent = turn ? "X" : "O";
 
     const gameState = checkWin();
 
@@ -131,7 +132,9 @@ function btnClick() {
         gameState.pos.forEach(index => {
             btns[index].style.color = "red";
         });
-        showMessage("ניצחת!", 'win');
+        // שינוי כאן - הצגת השחקן המנצח
+        const winner = vsComputer ? "ניצחת!" : `שחקן ${turn ? 'X' : 'O'} ניצח!`;
+        showMessage(winner, 'win');
         setTimeout(reset, 2000);
     }
     else if (gameState.isTie) {

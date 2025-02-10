@@ -1,59 +1,14 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
+
 
 .varela-round-regular {
     font-family: "Varela Round", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
-
-@media (max-width: 768px) {
-    .main-c {
-        width: 100% !important;
-        height: 400px !important;
-        padding: 40px !important;
-    }
-
-    .main-c h1 {
-        font-size: 30px !important;
-        font-weight: bold !important;
-    }
-
-    .main-c p {
-        font-size: 16px !important;
-    }
-
-    .test {
-        width: 50px !important;
-    }
-
-    .bt {
-        flex: none !important;
-        width: auto !important;
-    }
-
-    .pro {
-
-        width: 100% !important;
-        height: 250px !important;
-        padding: 20px !important;
-    }
-
-    #pro6 {
-        width: 295px !important;
-        height: 178px !important;
-    }
-
-    .footer-container p {
-        font-size: 15px !important;
-    }
-
-    .footer-container {
-        padding-top: 40px !important;
-    }
 }
 
 
@@ -73,6 +28,7 @@
     color: #adb5bd;
 }
 
+
 .main-c {
     background-color: #beb8bd;
     text-align: center;
@@ -80,7 +36,7 @@
     justify-content: center;
     width: 100%;
     height: 400px;
-    padding: 120px
+    padding: 120px;
 }
 
 .main-c h1 {
@@ -92,19 +48,15 @@
 }
 
 .main-c p {
-
     text-align: center;
     font-size: 15px;
     align-items: center;
     padding: 20px;
     font-family: "Varela Round", sans-serif;
     margin: 0 auto;
-    max-width: 600px
+    max-width: 600px;
 }
 
-.brakinline {
-    white-space: pre-wrap;
-}
 
 .button-container {
     display: flex;
@@ -119,24 +71,46 @@
     border: 3px solid #333;
     border-radius: 20px;
     background-color: cadetblue;
-
+    transition: background-color 0.3s;
 }
 
 .bt:hover {
     background-color: burlywood;
     color: black;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
+
 
 .icons {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 25px;
+    padding: 30px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
     height: auto;
 }
+
+.test {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.test:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 .pro {
     background-color: #f7f0f7;
@@ -172,11 +146,10 @@
     width: 400px;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin: 40px 0;
     padding-bottom: 40px;
-
 }
+
 
 .footer-container {
     display: flex;
@@ -198,4 +171,87 @@
 .footer-container p {
     font-family: "Varela Round", sans-serif;
     margin-top: 3px;
+}
+
+.brakinline {
+    white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+
+
+    .pro {
+        height: auto !important;
+
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+
+    }
+
+    #pro6 {
+        width: 100% !important;
+
+        max-width: 295px !important;
+
+        height: auto !important;
+
+        margin: 20px 0 !important;
+
+        padding-bottom: 0 !important;
+
+    }
+
+
+    .main-c {
+        height: 200px !important;
+        padding: 15px !important;
+    }
+
+    .main-c h1 {
+        font-size: 22px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .main-c p {
+        font-size: 13px !important;
+        padding: 8px !important;
+        line-height: 1.4 !important;
+    }
+
+    .button-container {
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .bt {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        border-width: 2px !important;
+    }
+
+    .test {
+        width: 60px !important;
+        height: 60px !important;
+        padding: 8px !important;
+    }
+
+    .icons {
+        gap: 15px;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .footer-container {
+        padding-top: 20px !important;
+
+    }
+
+    .footer-container p {
+        font-size: 15px !important;
+    }
+
+    .footer-container img {
+        width: 30px !important;
+        height: 30px !important;
+    }
 }

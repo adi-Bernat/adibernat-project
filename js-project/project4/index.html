@@ -1,72 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Users Mangement</title>
-    <link rel="stylesheet" href="style.css" />
-    <script type="module" src="./script/index.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>מזג אוויר</title>
 </head>
 
-<body dir="rtl">
-    <div class="container-register">
-        <h1 class="form-title">הרשמה</h1>
-        <form class="register-form">
-            <div class="form-control">
-                <label for="firstName">שם פרטי</label>
-                <input type="text" name="firstName" id="firstName" />
-            </div>
-            <div class="form-control">
-                <label for="lastName">שם משפחה</label>
-                <input type="text" name="lastName" id="lastName" />
-            </div>
-            <div class="form-control">
-                <label for="register-email">אימייל</label>
-                <input type="email" name="email" id="register-email" />
-            </div>
-            <div class="form-control">
-                <label for="register-password">סיסמא</label>
-                <input type="password" name="password" id="register-password" />
-            </div>
-            <button type="submit" class="btn">הרשם</button>
-        </form>
-    </div>
+<body>
+    <div class="container">
+        <div class="form-control">
+            <label for="inputCity">Search:</label>
+            <input type="text" id="inputCity">
+            <button>SEND</button>
+        </div>
 
-    <div class="container-login">
-        <h1 class="form-title">התחברות</h1>
-        <form class="login-form">
-            <div class="form-control">
-                <label for="login-email">אימייל</label>
-                <input type="email" name="email" id="login-email" />
-            </div>
-            <div class="form-control">
-                <label for="login-password">סיסמא</label>
-                <input type="password" name="password" id="login-password" />
-            </div>
-            <button type="submit" class="btn">התחבר</button>
-        </form>
-    </div>
+        <div class="weatherInfo">
+            <h1 id="city"></h1>
+            <p id="temp"></p>
+            <img id="weatherIcon">
+            <p id="description"></p>
+            <p id="errorMessage"></p>
 
-    <div class="container-users">
-        <h1 class="form-title">משתמשים</h1>
-
-        <table id="users-table">
-            <thead>
-                <tr>
-                    <th>שם פרטי</th>
-                    <th>שם משפחה</th>
-                    <th>אימייל</th>
-                    <th>סיסמא</th>
-                    <th>סטטוס</th>
-                    <th>פעולות</th>
-                </tr>
-            </thead>
-            <tbody id="users-table-body">
-                <!-- content from js -->
-            </tbody>
-        </table>
+            <div class="weather-details">
+                <div id="humidity"></div>
+                <div id="wind"></div>
+                <div id="rain"></div>
+                <div id="time"></div>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

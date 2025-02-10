@@ -1,109 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #333;
+    background: linear-gradient(135deg, #1e2f97, #1CB5E0);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, sans-serif;
-    color: rgb(225, 238, 252);
+    color: #ffffff;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-align: center;
+    background: linear-gradient(45deg, #FF3366, #FF9933);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    padding: 20px;
+    width: 100%;
+}
+
+.stats {
+    margin: 20px;
+    font-size: 1.3em;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats span {
+    font-weight: bold;
+    color: #FFD700;
+    font-size: 1.2em;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 20px;
     max-width: 600px;
-    margin: 20px;
-}
-
-
-.stats {
-    margin: 20px;
-    font-size: 1.2em;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 1.1em;
-    background-color: #656060;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 10px;
-}
-
-button:hover {
-    background-color: #d6a3df;
-    color: #333;
+    width: 100%;
+    margin: 30px auto;
+    padding: 20px;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
-    background-color: #a172a3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 8px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background: linear-gradient(45deg, #00b09b, #96c93d);
+    transform: rotateY(180deg) scale(1.05);
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .card img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    /* שומר על יחס התמונה */
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border-radius: 13px;
 }
 
-.card.flipped img {
-    display: block !important;
+.card::before {
+    content: '❓';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    color: white;
+    background: linear-gradient(135deg, #e83e8c, #6f42c1);
+    border-radius: 13px;
+    backface-visibility: hidden;
 }
 
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #FF3366, #FF9933);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 20px;
+    transition: all 0.3s ease;
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-/* מסך טאבלט */
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #FF9933, #FF3366);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
 @media (max-width: 900px) {
     .cards {
-        gap: 12px;
+        gap: 15px;
         padding: 15px;
     }
 
-    .card {
-        width: 100px;
-        height: 100px;
+    h1 {
+        font-size: 2.5em;
     }
 }
 
-/* מסך טלפון */
 @media (max-width: 768px) {
+    .game-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
     .cards {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
+        gap: 12px;
         padding: 10px;
     }
 
-    .card {
-        width: 70px;
-        height: 70px;
+    .stats {
+        font-size: 1.1em;
+        padding: 15px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1.1em;
     }
 }
 
-/* מסך טלפון קטן */
 @media (max-width: 480px) {
     .game-container {
         padding: 10px;
     }
 
+    h1 {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+
     .cards {
-        gap: 6px;
+        gap: 8px;
         padding: 5px;
     }
 
-    .card {
-        width: 65px;
-        height: 65px;
+    .stats {
+        font-size: 1em;
+        padding: 12px;
     }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+@keyframes celebrate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.winner {
+    animation: celebrate 0.5s ease-in-out 3;
 }

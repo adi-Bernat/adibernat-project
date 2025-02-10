@@ -1,162 +1,164 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /*עיצוב למובייל*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: transparent linear-gradient(180deg, #281EFF 0%, #2DFF8C 100%) 0% 0% no-repeat padding-box;
+  direction: rtl;
+}
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 85%;
+  height: 350px;
+  padding: 20px 70px;
+  margin-top: 80px;
+}
+
+.contact h1 {
+  margin-bottom: 20px;
+  font: normal normal normal 160px/231px Satisfy;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+.contact h2 {
+  font: normal normal normal 32px/38px Varela Round;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  text-align: center;
+  font: normal normal normal 16px/20px Varela Round;
+  letter-spacing: 0px;
+  color: #F9F9F9;
+  margin-bottom: 40px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.form-control>label {
+  font: normal normal normal 16px/20px Varela Round;
+  color: #F9F9F9;
+  text-align: right;
+}
+
+.form-control>input {
+  width: 418px;
+  height: 50px;
+  background: #F6F6F624;
+  border: 2px solid #FFFFFF;
+}
+
+#btn {
+  width: 200px;
+  height: 50px;
+  background: #FFFFFF;
+  opacity: 1;
+  margin-top: 18px;
+  text-align: center;
+  font: normal normal normal 16px/20px Varela Round;
+  letter-spacing: 0px;
+  color: #1C1C1C;
+}
+
+
 @media (max-width: 768px) {
   .container {
-   
-    height: 100% !important;
-        padding: 10px !important;
-        width: 100% !important;
-  }
-    .contact {
-        height: auto !important; 
-        padding: 20px !important; 
-    }
-
-    .contact h1 {
-      text-align: center !important;
-      font: normal normal normal 60px/86px Satisfy !important;
-      letter-spacing: 0px !important;
-      color: #FFFFFF !important;
-      text-shadow: 0px 0px 36px #00000087 !important;
-    }
-
-    .contact h2 {
-      text-align: right !important;
-      font: normal normal normal 18px/22px Varela Round !important;
-      letter-spacing: 0px !important;
-      color: #FFFFFF !important;
-      opacity: 1 !important;
-      margin-right: 20px !important;
-    }
-    .contact p{
-      text-align: center !important;
-      font: normal normal normal 16px/20px Varela Round !important;
-      letter-spacing: 0px !important;
-      color: #F9F9F9 !important;
-      opacity: 1 !important;
-      margin-right: 10px !important;
-    }
-
-    .form {
-        flex-direction: column !important; 
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    .form-control {
-      background: #F6F6F624 0% 0% no-repeat padding-box !important;
-      border: 2px solid #FFFFFF !important;
-      opacity: 1 !important;
-      width: 100% !important;
-      text-align: center;
-      font: normal normal normal 11px/13px Varela Round;
-      letter-spacing: 0px;
-      color: #F9F9F9;
-      border: none !important; 
-    }
-
-    .form-control > input {
-        width: 100% !important; 
-    }
-
-    #btn {
-      text-align: center !important;
-      font: normal normal normal 11px/13px Varela Round !important;
-      letter-spacing: 0px !important;
-      color: #2823FD !important;
-      width: 100% !important;
-      margin-right: 20px !important;
-    }
-}
- 
-  .container{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background: transparent linear-gradient(180deg, #281EFF 0%, #2DFF8C 100%) 0% 0% no-repeat padding-box;
-    direction: rtl;
-}
-
-.contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 85%;
-    height: 350px;
-    padding: 20px 70px;
-    margin-top: 80px;
-
-}
-
-  .contact h1{
-    margin-bottom: 20px;
-    font: normal normal normal 160px/231px Satisfy;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    margin-bottom: 20px;
+    height: 100vh !important;
+    padding: 0 !important;
+    width: 100% !important;
+    align-items: flex-start;
   }
 
-  .contact h2{
-    font: normal normal normal 32px/38px Varela Round;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-
+  .contact {
+    height: auto !important;
+    padding: 10px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
   }
-  .contact p{
-    text-align: center;
-    font: normal normal normal 16px/20px Varela Round;
-    letter-spacing: 0px;
-    color: #F9F9F9;
-    margin-bottom: 40px;
+
+  .contact h1 {
+    text-align: center !important;
+    font: normal normal normal 60px/86px Satisfy !important;
+    letter-spacing: 0px !important;
+    color: #FFFFFF !important;
+    text-shadow: 0px 0px 36px #00000087 !important;
+  }
+
+  .contact h2 {
+    text-align: right !important;
+    font: normal normal normal 18px/22px Varela Round !important;
+    letter-spacing: 0px !important;
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    margin-right: 20px !important;
+  }
+
+  .contact p {
+    text-align: center !important;
+    font: normal normal normal 16px/20px Varela Round !important;
+    letter-spacing: 0px !important;
+    color: #F9F9F9 !important;
+    opacity: 1 !important;
+    margin-right: 10px !important;
   }
 
   .form {
-    display: flex;
-    flex-direction: row; 
-    gap: 30px; 
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
   }
-  
+
   .form-control {
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    
-  }
-  
-  .form-control > label {
-    font: normal normal normal 16px/20px Varela Round;
-    color: #F9F9F9;
-    text-align: right;
-  }
-  
-  .form-control > input {
-    width: 418px;
-    height: 50px;
-    background: #F6F6F624;
-    border: 2px solid #FFFFFF;
-  }
-  
- 
-  #btn{
-    width: 200px;
-    height: 50px;
-    background: #FFFFFF;
-    opacity: 1;
-    margin-top: 18px;
+    background: #F6F6F624 0% 0% no-repeat padding-box !important;
+    border: 2px solid #FFFFFF !important;
+    opacity: 1 !important;
+    width: 100% !important;
     text-align: center;
-    font: normal normal normal 16px/20px Varela Round;
+    font: normal normal normal 11px/13px Varela Round;
     letter-spacing: 0px;
-    color: #1C1C1C;
+    color: #F9F9F9;
+    border: none !important;
   }
- 
+
+  .form-control>input {
+    width: 100% !important;
+  }
+
+  #btn {
+    text-align: center !important;
+    font: normal normal normal 11px/13px Varela Round !important;
+    letter-spacing: 0px !important;
+    color: #2823FD !important;
+    width: 100% !important;
+    margin-right: 20px !important;
+  }
+}
